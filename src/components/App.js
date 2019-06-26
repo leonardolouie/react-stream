@@ -2,27 +2,26 @@ import React from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
 import GoogleAuth from './GoogleAuth';
 
-import StreamCreate from './StreamCreate';
-import StreamEdit from './StreamEdit';
-import StreamDelete from './StreamDelete';
-import StreamList from './StreamList';
-import StreamShow from './StreamShow';
+import StreamCreate from './streams/StreamCreate';
+import StreamEdit from './streams/StreamEdit';
+import StreamDelete from './streams/StreamDelete';
+import StreamList from './streams/StreamList';
+import StreamShow from './streams/StreamShow';
 import Header from './Header';
-
 
 
 class App extends React.Component{
 
     render()
     {
-        
+
      return(
 
          <div>
-        
+    
             <BrowserRouter>
-            <GoogleAuth />
              <Header/>
+          
                 <div>
                     <Route path='/' exact component={StreamList} />
                     <Route path='/streams/new' exact component={StreamCreate} />
@@ -31,6 +30,7 @@ class App extends React.Component{
                     <Route path='/streams/show' exact component={StreamShow} />
                 </div>
              </BrowserRouter>
+             <GoogleAuth />
         </div>
      
         )
